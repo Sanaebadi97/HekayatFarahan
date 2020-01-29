@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">10dp</dimen>
+    <dimen name="margin">8dp</dimen>
+    <dimen name="cardView">4dp</dimen>
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="title">19sp</dimen>
+</resources>

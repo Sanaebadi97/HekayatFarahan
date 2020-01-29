@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HekayatFarahan</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rate">4.5</string>
+    <string name="Genre">genre : </string>
+    <string name="player_count">Player Count :</string>
+    <string name="game_video">Game Video :</string>
+    <string name="no_internet">NO INTERNET CONNECTION !</string>
+    <string name="data_insert">Data Inserted !</string>
+</resources>

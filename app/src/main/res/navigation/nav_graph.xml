@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/gameListHome">
+
+    <fragment
+        android:id="@+id/gameListHome"
+        android:name="info.sanaebadi.hekayatfarahan.view.fragment.GameListHome"
+        android:label="GameListHome" >
+        <action
+            android:id="@+id/action_gameListHome_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="gameImage"
+            app:argType="string" />
+        <argument
+            android:name="gameTitle"
+            app:argType="string" />
+        <argument
+            android:name="gameDesc"
+            app:argType="string" />
+        <argument
+            android:name="playerCount"
+            app:argType="integer" />
+        <argument
+            android:name="gameVideo"
+            app:argType="string" />
+        <argument
+            android:name="genreName"
+            app:argType="string" />
+        <argument
+            android:name="genreImage"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameDetailsFragment"
+        android:name="info.sanaebadi.hekayatfarahan.view.fragment.GameDetailsFragment"
+        android:label="fragment_game_detials"
+        tools:layout="@layout/fragment_game_detials" />
+</navigation>

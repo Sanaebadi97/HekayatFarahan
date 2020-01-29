@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/cardView"
+    app:cardElevation="4dp"
+
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_game"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="@dimen/margin"
+                android:padding="@dimen/padding"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@mipmap/ic_launcher" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_game_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_margin="@dimen/margin"
+                android:background="#99FFFFFF"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="16sp"
+                tools:text="@string/app_name" />
+
+        </FrameLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_game_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:ellipsize="end"
+            android:foregroundGravity="center"
+            android:maxLines="1"
+            android:padding="@dimen/padding"
+            android:textColor="@color/secondaryTextColor"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/framelayout"
+            tools:text="@string/hello_blank_fragment" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_game_desc">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:foregroundGravity="center"
+                android:src="@drawable/ic_star_black_24dp"
+                android:tint="@color/yellow" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_game_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:foregroundGravity="center"
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_game"
+                tools:text="@string/rate" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--        <androidx.appcompat.widget.AppCompatTextView-->
+        <!--            android:id="@+id/txt_game_video"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:layout_marginStart="5dp"-->
+        <!--            android:ellipsize="end"-->
+        <!--            android:foregroundGravity="center"-->
+        <!--            android:maxLines="1"-->
+        <!--            android:layout_margin="@dimen/margin"-->
+        <!--            android:padding="5dp"-->
+        <!--            android:textColor="@android:color/black"-->
+        <!--            android:textSize="15sp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/txt_game_desc"-->
+        <!--            tools:text="@string/hello_blank_fragment" />-->
+
+
+        <!--        <androidx.appcompat.widget.LinearLayoutCompat-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_margin="@dimen/margin"-->
+        <!--            android:gravity="center"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:padding="@dimen/padding"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/txt_game_desc">-->
+
+        <!--            <androidx.appcompat.widget.AppCompatImageView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:foregroundGravity="center"-->
+        <!--                android:src="@drawable/ic_person_black_24dp"-->
+        <!--                android:tint="@android:color/black" />-->
+
+        <!--            <androidx.appcompat.widget.AppCompatTextView-->
+        <!--                android:id="@+id/txt_player_count"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:foregroundGravity="center"-->
+        <!--                android:textColor="@android:color/black"-->
+        <!--                android:textSize="19sp"-->
+        <!--                android:textStyle="bold"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toBottomOf="@id/img_game"-->
+        <!--                tools:text="@string/rate" />-->
+
+
+        <!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
