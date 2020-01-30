@@ -69,7 +69,6 @@ class GameListHome : Fragment() {
                         games[i].description,
                         games[i].rate,
                         games[i].players_count,
-                        games[i].genre.name,
                         games[i].image,
                         games[i].video
                     )
@@ -83,6 +82,8 @@ class GameListHome : Fragment() {
                     }
                 }
 
+                var gameList = databaseHelper.getAllGames()
+                println("GAME LIST IS $gameList")
 
 
             })
@@ -108,6 +109,7 @@ class GameListHome : Fragment() {
 
 
     override fun onDestroy() {
+        databaseHelper.close()
         super.onDestroy()
         viewModel.cancelJob()
     }

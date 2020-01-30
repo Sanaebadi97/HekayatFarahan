@@ -1,9 +1,13 @@
 package info.sanaebadi.hekayatfarahan.dbSqlite
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import androidx.room.RoomMasterTable
+import info.sanaebadi.hekayatfarahan.model.Game
 
 
 class DatabaseHelper(
@@ -39,7 +43,6 @@ class DatabaseHelper(
         description: String?,
         rate: String?,
         player_count: Int?,
-        genre_name: String?,
         image: String?,
         video: String?
     ): Boolean {
@@ -49,14 +52,35 @@ class DatabaseHelper(
         contentValues.put(GAME_DESC, description)
         contentValues.put(GAME_RATE, rate)
         contentValues.put(GAME_PLAYER_COUNT, player_count)
-        contentValues.put(GAME_GENRE_NAME, genre_name)
         contentValues.put(GAME_IMAGE, image)
         contentValues.put(GAME_VIDEO, video)
         val result = db.insert(
-           TABLE_NAME,
+            TABLE_NAME,
             null,
             contentValues
         ) //error returns -1 else returns the ID value
         return result != -1L
     }
+
+    @SuppressLint("Recycle")
+    fun getAllGames(): List<Game>? {
+        val db = this.writableDatabase
+        val list: MutableList<Game> = ArrayList()
+        val cursor: Cursor = db.rawQuery("SELECT * FROM $TABLE_NAME", null)
+        while (cursor.moveToNext()) {
+            list.add(
+                Game(
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getInt(4),
+                    cursor.getString(6),
+                    cursor.getString(7)
+                )
+            )
+        }
+        return list
+    }
+
+
 }
